@@ -1,0 +1,379 @@
+:root {
+  --font-tittles: "Minnie";
+  --font-text: "Bahnschrift";
+  --font-subtittles: "Agency FB";
+  --yellow: #d8922b;
+  --black: #191919;
+}
+@font-face {
+  font-family: Minnie;
+  src: url(../fonts/Minnie.TTF);
+}
+@font-face {
+  font-family: Agency FB;
+  src: url(../fonts/AGENCYR.TTF);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../images/patterns/blak\ pattern.png);
+  background-size: cover;
+  background-color: var(--black);
+
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+}
+
+h1 {
+  font-family: var(--font-tittles);
+  color: #d8922b;
+  font-size: 3.5em;
+  text-align: center;
+  text-shadow: 2px 12px 8px rgb(0 0 0);
+  animation: aparecer 1s linear forwards;
+}
+
+
+@keyframes aparecer {
+  0%{
+    transform: translateY(5px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(30px);
+    opacity: 1;
+  }
+}
+
+
+.inicio{
+  margin: 160px 0 380px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  gap: 200px;
+}
+.flecha{
+  animation: arrow 1s forwards infinite;
+}
+@keyframes arrow {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* VIÑETAS */
+
+.vineta3 {
+  width: 61%;
+  position: relative;
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 10px;
+  box-shadow: 0px 13px 20px 20px #0000009f;
+  overflow: hidden;
+  filter: brightness(0%);
+  -webkit-filter: brightness(0%);
+  -moz-filter: brightness(0%);
+}
+.vineta2,
+.vineta1 {
+  width: 30%;
+  position: relative;
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 10px;
+  box-shadow: 0px 13px 20px 20px #0000009f;
+  overflow: hidden;
+  filter: grayscale(100%) blur(10px) brightness(103%);
+  -webkit-filter: grayscale(100%) blur(10px) brightness(103%);
+  -moz-filter: grayscale(100%) blur(10px) brightness(103%);
+  animation: blurr 2s forwards infinite ease-in;
+}
+@keyframes blurr {
+  0% {
+    filter: grayscale(100%) blur(10px) brightness(103%);
+    -webkit-filter: grayscale(100%) blur(10px) brightness(103%);
+    -moz-filter: grayscale(100%) blur(10px) brightness(103%);
+  }
+  100% {
+    filter: grayscale(48%) blur(5px) brightness(103%);
+    -webkit-filter: grayscale(48%) blur(5px) brightness(103%);
+    -moz-filter: grayscale(48%) blur(5px) brightness(103%);
+  }
+}
+.vineta3 img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+.vineta1 img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+.vineta1click {
+  animation: unblurr 1s forwards linear;
+}
+@keyframes unblurr {
+  0% {
+    filter: grayscale(14%) sepia(20%) blur(8px) brightness(98%);
+    -webkit-filter: grayscale(14%) sepia(20%) blur(8px) brightness(98%);
+    -moz-filter: grayscale(14%) sepia(20%) blur(8px) brightness(98%);
+  }
+  100% {
+    filter: brightness(103%);
+    -webkit-filter: brightness(103%);
+    -moz-filter: brightness(103%);
+  }
+}
+.vineta2click {
+  animation: unblurr 1.5s forwards linear;
+  animation-timing-function: ease-in;
+}
+.vineta2 img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+.vineta3click {
+  animation: darki 5s forwards linear;
+  animation-timing-function: ease-out;
+}
+@keyframes darki {
+  0% {
+    filter: brightness(0%);
+    -webkit-filter: brightness(0%);
+    -moz-filter: brightness(0%);
+  }
+  100% {
+    filter: brightness(99%);
+    -webkit-filter: brightness(99%);
+    -moz-filter: brightness(99%);
+  }
+}
+
+.sturtr {
+  width: 32%;
+  height: auto;
+  top: 10%;
+  left: 65%;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.1;
+}
+.sturtr_move{
+  animation: sturtr 1s linear forwards;
+}
+@keyframes sturtr {
+    0%{
+        opacity: 0.1;
+    }
+    100%{
+        opacity: 0.95;
+    }
+}
+.rata-talk {
+  position: absolute;
+  width: 30%;
+  height: auto;
+  top: 55%;
+  left: -5%;
+  cursor: pointer;
+  
+}
+.rata_move {
+  animation: rata 0.5s linear forwards;
+  animation-timing-function: ease;
+}
+@keyframes rata {
+  0% {
+    width: 30%;
+    height: auto;
+    top: 55%;
+    left: -5%;
+  }
+  70% {
+    width: 30%;
+    height: auto;
+    top: 135px;
+    left: -5%;
+  }
+  100% {
+    width: 30%;
+    height: auto;
+    top: 40%;
+    left: -5%;
+  }
+}
+.globo {
+  position: absolute;
+  width: 50%;
+  top: 20%;
+  left: 20%;
+  opacity: 0.1;
+  cursor: pointer;
+}
+.globoanim {
+  animation: globo 3s forwards linear;
+  animation-timing-function: ease-out;
+}
+@keyframes globo {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.rata {
+  width: 40%;
+  top: 45%;
+  left: 1%;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* BOTONES */
+
+.botones {
+  display: flex;
+  justify-content: center;
+  margin: 200px 0px 200px;
+  gap: 200px;
+/*   width: 80%;
+ */}
+#home img {
+  width: 45%;
+}
+#home:hover {
+  animation-name: home;
+  animation-timing-function: ease-in-out;
+}
+@keyframes home {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+button img {
+  width: 65%;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s linear;
+  transform-origin: left;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+button:hover {
+  animation-name: bounce;
+  animation-timing-function: ease-in-out;
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+#izquierda:hover {
+  animation-name: bounce2;
+  animation-timing-function: ease-in-out;
+}
+@keyframes bounce2 {
+  0% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+/* FOOTER */
+footer {
+  background: url(../images/patterns/yellow-pattern.png);
+  background-size: cover;
+  background-color: var(--yellow);
+  box-shadow: 1px -6px 20px 7px rgb(0 0 0 / 50%);
+}
+
+footer {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2 {
+  font-family: var(--font-tittles);
+  color: white;
+  letter-spacing: 15px;
+  font-size: 2.5em;
+  font-weight: lighter;
+  margin: 10px;
+  text-shadow: 2px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+  font-family: var(--font-text);
+  font-size: smaller;
+  color: var(--black);
+  margin: 5px;
+}
+
+@media (max-width:768px) {
+  .inicio{
+    margin: 100px 0;
+  }
+  h1{
+    font-size: 2em;
+    padding: 0 1em;
+  }
+  .botones{
+    gap: 0;
+  }
+  .vineta1, .vineta2{
+    width: 60%;
+  }
+  .vineta3{
+    width: 100%;
+  }
+}
